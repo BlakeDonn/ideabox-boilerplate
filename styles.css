@@ -43,7 +43,7 @@ body {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bolder;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .body-text {
@@ -54,14 +54,31 @@ body {
 /*=== menu section ===*/
 
 .menu {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 380px;
-  flex-direction: row;
 }
 
+.hidetheborger {
 
+}
 
+.sidebar {
+  width: 14%;
+}
 
+.ideabox {
+  color: #EAEAF4;
+  font-family: 'Open Sans';
+  font-weight: bolder;
+  padding: 20px;
+  font-size: 16px;
+  display: flex;
+  grid-column: 2;
+  justify-content: flex-start;
+  padding-bottom: 3.5%
+  }
 
 /*=== main section ===*/
 
@@ -153,15 +170,8 @@ body {
   }
 
   .ideabox {
-    color: #EAEAF4;
-    font-family: 'Open Sans';
-    font-weight: bolder;
-    padding: 20px;
-    font-size: 20px;
     display: flex;
-    grid-column: 2;
-    justify-content: flex-start;
-    padding: 4.5%;
+    text-align: center;
     }
 
   .hamburger-button {
@@ -169,10 +179,9 @@ body {
     background-color: transparent;
     border: none;
     width: 3em;
-    height: 3.5em;
+    height: 2.5em;
     align-items: center;
     justify-content: flex-start;
-    grid-column: 1;
   }
 
   .hamburger-icon {
@@ -181,14 +190,16 @@ body {
   }
 
   .menu {
+    display: flex;
     height: 60px;
-    /* text-align: center; */
     width: 100%;
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 1;
-    flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hidden {
+    /* display: none!important; */
+    visibility: hidden;
   }
 
  }
@@ -203,16 +214,17 @@ body {
    grid-template-columns: 1fr;
  }
 
+ .menu {
+   display: flex;
+   height: 40px;
+   width: 100%;
+   align-items: center;
+   justify-content: space-between;
+ }
+
   .ideabox {
-    color: #EAEAF4;
-    font-family: 'Open Sans';
-    font-weight: bolder;
-    padding: 20px;
-    font-size: 16px;
     display: flex;
-    grid-column: 2;
-    justify-content: flex-start;
-    padding-bottom: 3.5%
+    text-align: center;
     }
 
   .hamburger-button {
@@ -223,7 +235,6 @@ body {
     height: 2.5em;
     align-items: center;
     justify-content: flex-start;
-    grid-column: 1;
   }
 
   .hamburger-icon {
@@ -231,16 +242,6 @@ body {
     width: 25px;
   }
 
-  .menu {
-    height: 40px;
-    /* text-align: center; */
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 1;
-    flex-direction: row;
-    align-items: stretch;
-  }
 
   .idea-form {
     padding: 6% 0;
