@@ -9,6 +9,9 @@ class Idea {
 
   }
   deleteFromStorage() {
+
+  }
+  updateIdea() {
     
   }
 
