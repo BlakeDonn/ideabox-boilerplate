@@ -11,6 +11,7 @@ html, body {
 
 body {
   display: flex;
+  height:200%;
 }
 
 /*=== Background Colors ===*/
@@ -102,14 +103,6 @@ hr {
   margin: 25px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.menu {
-  height: 40px;
-  /* text-align: center; */
-  width: 100%;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  align-items: stretch;
 }
 .idea-form {
   padding: 6% 0;
@@ -267,7 +260,7 @@ hr {
   .idea-cards {
    margin: 25px auto;
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr;
  }
 
  @media only screen and (max-width: 900px) {
@@ -330,16 +323,6 @@ hr {
    grid-template-columns: 1fr;
    width: 90%;
  }
-
- .menu {
-   display: flex;
-   height: 40px;
-   width: 100%;
-   align-items: center;
-   justify-content: space-between;
-   flex-direction: row;
- }
-
   .ideabox {
     display: flex;
     text-align: center;
