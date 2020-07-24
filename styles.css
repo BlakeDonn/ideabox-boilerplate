@@ -13,11 +13,6 @@ body {
   display: flex;
 }
 
-/* img {
-  width: 20px;
-  height: 20px;
-} */
-
 /*=== Background Colors ===*/
 
 .purple-1 {
@@ -42,8 +37,7 @@ body {
 .header-text {
   color: #EAEAF4;
   font-family: 'Open Sans';
-  font-weight: bold;
-  padding: 20px;
+  font-weight: bolder;
 }
 
 .body-text {
@@ -157,9 +151,10 @@ body {
 .idea-cards {
   margin: 25px auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  width: 90%;
+  width: 95%;
+  min-width: inherit;
 }
 
 .idea-box {
@@ -173,16 +168,19 @@ body {
 .idea-box h2 {
   color: #1F1F3D;
   padding: 15px 15px 0px 15px;
+  font-size: 1.75em;
+  font-weight: bolder;
 }
 
 .idea-box p {
   color: #1F1F3D;
   padding: 15px;
+  font-size: 1.75em;
 }
 
 .box-header {
   background-color: #1F1F3D;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -191,17 +189,17 @@ body {
 }
 
 .box-star {
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
 }
 .box-x {
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
 }
 
 .box-footer {
   background-color: #5356A4;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   padding: 0px 3px;
@@ -209,10 +207,12 @@ body {
 }
 .box-footer h3 {
   color: #FFFFFF;
+  padding-bottom: 3px;
+  font-size: 1.5em;
 }
 .box-footer img {
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
 }
 
 
@@ -221,10 +221,7 @@ body {
   body {
     /* flex-direction: row; */
   }
-  .idea-cards {
-   margin: 25px auto;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
+
  }
  .menu {
    height: 100%;
@@ -236,8 +233,6 @@ body {
     flex-direction: column;
   }
    .idea-cards {
-    margin: 25px auto;
-    display: grid;
     grid-template-columns: 1fr 1fr;
   }
   .menu {
@@ -254,9 +249,8 @@ body {
     flex-direction: column;
   }
   .idea-cards {
-   margin: 25px auto;
-   display: grid;
    grid-template-columns: 1fr;
+   width: 90%;
  }
   .hamburger-button {
     background-color: transparent;
