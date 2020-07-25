@@ -5,14 +5,6 @@ html, body, h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
-/* nav {
-  height: auto;
-} */
-
-/* html {
-  height: 100%
-} */
-
 body {
   display: flex;
   /* height: 100%; */
@@ -56,7 +48,6 @@ body {
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 380px;
 }
 
 .hidetheburger {
@@ -150,6 +141,7 @@ hr {
   padding: 2%;
   border: 2px solid #5356A4;
   border-radius: .15em;
+  outline: none;
 }
 .search {
   width: 500px;
@@ -199,6 +191,7 @@ hr {
   border: 1px solid #6E646B;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .idea-box h2 {
@@ -206,12 +199,14 @@ hr {
   padding: 15px 15px 0px 15px;
   font-size: 1.75em;
   font-weight: bolder;
+
 }
 
 .idea-box p {
   color: #1F1F3D;
   padding: 15px;
   font-size: 1.75em;
+
 }
 
 .box-header {
@@ -232,6 +227,10 @@ hr {
 .box-x {
   height: 3em;
   width: 3em;
+}
+
+.box-content {
+
 }
 
 .box-footer {
@@ -257,9 +256,7 @@ hr {
 
 /*=== media queries ===*/
 @media only screen and (max-width: 1200px) {
-  body {
-    /* flex-direction: row; */
-  }
+
 
   .idea-cards {
    margin: 25px auto;
@@ -303,7 +300,6 @@ hr {
   .menu {
     display: flex;
     height: 60px;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
