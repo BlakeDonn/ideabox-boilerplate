@@ -8,28 +8,21 @@ var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
 
+var savedIdeas = [];
+
+window.addEventListener("click", eventHandler);
+
+function eventHandler(event) {
+  if (titleInput.value === "" && bodyInput.value === "" && event.target === saveIdeaButton) {
+    var newIdea = new Idea(titleInput.value, bodyInput.value)
+    savedIdeas.push(newIdea)
+  }
+};
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//adding functionality to the save button,
-//and having the completed idea card appear
-//in its designated area.
-
-//first! enable button functionality by linking
-//the js up with the HTML.
-//
+//in the eventHandler write logic that grabs .value of input fields
+//instantiates a new instance of the class Idea
+//have populated card pop up on screen.
 .
