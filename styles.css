@@ -10,6 +10,7 @@ body {
   /* height: 100%; */
 }
 
+
 /*=== Background Colors ===*/
 
 .purple-1 {
@@ -84,12 +85,13 @@ hr {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bolder;
-  padding: 20px;
-  font-size: 16px;
+  font-size: 1.75em;
   display: flex;
   grid-column: 2;
   justify-content: flex-start;
   margin-top: 1em;
+  padding-bottom: 25px;
+  padding-left: 20px;
   }
 
 /*=== main section ===*/
@@ -293,8 +295,9 @@ hr {
   }
 
   .hamburger-icon {
-    height: 45px;
-    width: 45px;
+    height: 55px;
+    width: 55px;
+    padding-left: 15px;
   }
 
   .menu {
