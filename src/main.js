@@ -19,6 +19,8 @@ function clickHandler(event) {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     savedIdeas.push(newIdea);
     displayIdeas();
+    titleInput.value = "";
+    bodyInput.value = "";
   }
 };
 
