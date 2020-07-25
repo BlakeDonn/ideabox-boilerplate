@@ -154,6 +154,10 @@ hr {
   border-radius: .15em;
 }
 
+.save-idea-active{
+  opacity: 1;
+}
+
 .search {
   width: 500px;
   height: 3.25em;
@@ -184,11 +188,6 @@ hr {
   height: 3em;
   width: 500px;
   border: 2px solid #5356A4;
-}
-
-#title-input:invalid + .save-idea-button {
-  opacity: .2;
-  cursor: no-drop;
 }
 
 ::placeholder {
@@ -407,10 +406,7 @@ hr {
     margin-bottom: 1em;
     background-color: #1F1F3D;
     color: #FFFFFF;
-    opacity: 0.65;
     padding: 2%;
-    border: 2px solid #5356A4;
-    border-radius: .15em;
   }
   .search {
     width: 88%;
