@@ -22,6 +22,7 @@ function clickHandler(event) {
     displayIdeas();
     titleInput.value = "";
     bodyInput.value = "";
+    disableButton();
   }
 };
 
