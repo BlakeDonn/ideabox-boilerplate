@@ -7,16 +7,42 @@ var ideaDelete = document.querySelector(".box-x");
 var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
+//possible local selectors below
+var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
-window.addEventListener("click", eventHandler);
+window.addEventListener("click", clickHandler);
 
-function eventHandler(event) {
-  if (titleInput.value === "" && bodyInput.value === "" && event.target === saveIdeaButton) {
-    var newIdea = new Idea(titleInput.value, bodyInput.value)
-    savedIdeas.push(newIdea)
+function clickHandler(event) {
+  if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
+    var newIdea = new Idea(titleInput.value, bodyInput.value);
+    savedIdeas.push(newIdea);
+    displayIdeas();
   }
+};
+
+function displayIdeas() {
+  var ideaData = "";
+  // ideaCardArea.insertAdjacentHTML()
+  var savedIdeaCard = `
+    <div class="idea-box">
+      <div class="box-header">
+        <img src="assets/star-active.svg" alt="Star Icon" class="box-star">
+        <img src="assets/delete.svg" alt="Delete Icon" class="box-x">
+      </div>
+      <div>
+        <h2 class="header-text">${titleInput.value}</h2>
+        <p class="body-text">${bodyInput.value}</p>
+      </div>
+      <div class=" box-footer">
+        <img src="assets/comment.svg" alt="Add Comment Icon">
+        <h3 class="header-text">Comment</h3>
+      </div>
+    </div>
+  `;
+  ideaData += savedIdeaCard;
+  ideaCardArea.innerHTML = savedIdeaCard;
 };
 
 
@@ -25,4 +51,3 @@ function eventHandler(event) {
 //in the eventHandler write logic that grabs .value of input fields
 //instantiates a new instance of the class Idea
 //have populated card pop up on screen.
-.
