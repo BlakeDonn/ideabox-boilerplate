@@ -30,13 +30,12 @@ function clickHandler(event) {
 
 function removeCard(event) {
   if (event.target.className === "box-x") {
-    var selectedIdea2 = event.target.closest("idea-box");
-    var selectedIdea = event.target.id;
-    // console.log(selectedIdea2);
+    var selectedIdea = event.target.closest(".idea-box");
+    var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
-      if (savedIdeas[i].id == selectedIdea) {
+      if (savedIdeas[i].id == selectedID) {
         savedIdeas.splice(i, 1);
-      selectedIdea2.remove();
+        selectedIdea.remove();
       }
     }
   }
