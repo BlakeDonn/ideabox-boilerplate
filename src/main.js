@@ -13,6 +13,7 @@ var ideaCardArea = document.querySelector(".idea-cards");
 var savedIdeas = [];
 
 window.addEventListener("click", clickHandler);
+window.addEventListener("keyup", keyHandler);
 
 function clickHandler(event) {
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
@@ -24,8 +25,11 @@ function clickHandler(event) {
   }
 };
 
+function keyHandler(){
+  titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
+}
+
 function displayIdeas() {
-  // var ideaData = "";
   var savedIdeaCard = `
     <div class="idea-box">
       <div class="box-header">
@@ -42,13 +46,13 @@ function displayIdeas() {
       </div>
     </div>
   `;
-  // ideaData += savedIdeaCard;
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
 
+function enableButton(){
+  saveIdeaButton.classList.add("save-idea-active");
+};
 
-
-
-//in the eventHandler write logic that grabs .value of input fields
-//instantiates a new instance of the class Idea
-//have populated card pop up on screen.
+function disableButton(){
+  saveIdeaButton.classList.remove("save-idea-active");
+};
