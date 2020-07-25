@@ -345,11 +345,6 @@ hr {
     justify-content: flex-start;
   }
 
-  .hamburger-icon {
-    height: 25px;
-    width: 25px;
-  }
-
   .idea-form {
     padding: 6% 0;
     /* flex-grow: 1; */
