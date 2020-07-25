@@ -7,6 +7,7 @@ var ideaDelete = document.querySelector(".box-x");
 var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
+var deleteCard = document.querySelector(".box-x");
 //possible local selectors below
 var ideaCardArea = document.querySelector(".idea-cards");
 
@@ -19,27 +20,40 @@ function clickHandler(event) {
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     savedIdeas.push(newIdea);
-    displayIdeas();
+    displayIdeas(newIdea);
     titleInput.value = "";
     bodyInput.value = "";
     disableButton();
   }
+  if (event.target === deleteCard) {
+
+    // local variable set to the event.target.id
+    for (var i = 0; i < savedIdeas.length; i++) {
+      // if the  id == the savedIdeas[i] id
+      // then splice savedIdeas[i] out of savedIdeas
+      // .remove savedIdeas[i] out of savedIdeas array
+    }
+  }
 };
 
+// if deleteCard === target
+// loop through savedIdeas
+// splice target saved idea index out of savedIdeas array
+// .remove() the target
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
 }
 
-function displayIdeas() {
+function displayIdeas(newIdea) {
   var savedIdeaCard = `
-    <div class="idea-box">
+    <div class="idea-box" ${newIdea.id}>
       <div class="box-header">
         <img src="assets/star-active.svg" alt="Star Icon" class="box-star">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x">
       </div>
       <div>
-        <h2 class="header-text">${titleInput.value}</h2>
-        <p class="body-text">${bodyInput.value}</p>
+        <h2 class="header-text">${newIdea.title}</h2>
+        <p class="body-text">${newIdea.body}</p>
       </div>
       <div class=" box-footer">
         <img src="assets/comment.svg" alt="Add Comment Icon">
