@@ -13,6 +13,7 @@ var savedIdeas = [];
 window.addEventListener("click", function(event) {
   clickHandler(event);
   removeCard(event);
+
 });
 window.addEventListener("keyup", keyHandler);
 
@@ -29,7 +30,15 @@ function clickHandler(event) {
 
 function removeCard(event) {
   if (event.target.className === "box-x") {
-    console.log("hi");
+    var selectedIdea2 = event.target.closest("idea-box");
+    var selectedIdea = event.target.id;
+    // console.log(selectedIdea2);
+    for (var i = 0; i < savedIdeas.length; i++) {
+      if (savedIdeas[i].id == selectedIdea) {
+        savedIdeas.splice(i, 1);
+      selectedIdea2.remove();
+      }
+    }
   }
 }
   // local variable set to the event.target.id
@@ -49,10 +58,10 @@ function keyHandler(){
 
 function displayIdeas(newIdea) {
   var savedIdeaCard = `
-    <div class="idea-box" ${newIdea.id}>
+    <div class="idea-box">
       <div class="box-header">
         <img src="assets/star-active.svg" alt="Star Icon" class="box-star">
-        <img src="assets/delete.svg" alt="Delete Icon" class="box-x">
+        <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
       </div>
       <div>
         <h2 class="header-text">${newIdea.title}</h2>
