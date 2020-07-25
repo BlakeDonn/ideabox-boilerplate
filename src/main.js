@@ -40,17 +40,7 @@ function removeCard(event) {
     }
   }
 }
-  // local variable set to the event.target.id
-  // for (var i = 0; i < savedIdeas.length; i++) {
-    // if the  id == the savedIdeas[i] id
-    // then splice savedIdeas[i] out of savedIdeas
-    // .remove savedIdeas[i] out of savedIdeas array
-  // }
 
-// if deleteCard === target
-// loop through savedIdeas
-// splice target saved idea index out of savedIdeas array
-// .remove() the target
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
 }
