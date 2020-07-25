@@ -2,18 +2,18 @@ var hamburgerButton = document.querySelector(".hamburger-button");
 var showStarredButton = document.querySelector(".show-starred");
 var saveIdeaButton = document.querySelector(".save-idea-button");
 var searchIdeaButton = document.querySelector(".search-idea-button");
-var ideaStar = document.querySelector(".box-star");
-var ideaDelete = document.querySelector(".box-x");
 var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
-var deleteCard = document.querySelector(".box-x");
 //possible local selectors below
 var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
-window.addEventListener("click", clickHandler);
+window.addEventListener("click", function(event) {
+  clickHandler(event);
+  removeCard(event);
+});
 window.addEventListener("keyup", keyHandler);
 
 function clickHandler(event) {
@@ -25,16 +25,19 @@ function clickHandler(event) {
     bodyInput.value = "";
     disableButton();
   }
-  if (event.target === deleteCard) {
+}
 
-    // local variable set to the event.target.id
-    for (var i = 0; i < savedIdeas.length; i++) {
-      // if the  id == the savedIdeas[i] id
-      // then splice savedIdeas[i] out of savedIdeas
-      // .remove savedIdeas[i] out of savedIdeas array
-    }
+function removeCard(event) {
+  if (event.target.className === "box-x") {
+    console.log("hi");
   }
-};
+}
+  // local variable set to the event.target.id
+  // for (var i = 0; i < savedIdeas.length; i++) {
+    // if the  id == the savedIdeas[i] id
+    // then splice savedIdeas[i] out of savedIdeas
+    // .remove savedIdeas[i] out of savedIdeas array
+  // }
 
 // if deleteCard === target
 // loop through savedIdeas
