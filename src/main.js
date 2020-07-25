@@ -23,8 +23,7 @@ function clickHandler(event) {
 };
 
 function displayIdeas() {
-  var ideaData = "";
-  // ideaCardArea.insertAdjacentHTML()
+  // var ideaData = "";
   var savedIdeaCard = `
     <div class="idea-box">
       <div class="box-header">
@@ -41,8 +40,8 @@ function displayIdeas() {
       </div>
     </div>
   `;
-  ideaData += savedIdeaCard;
-  ideaCardArea.innerHTML = savedIdeaCard;
+  // ideaData += savedIdeaCard;
+  ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
 
 
