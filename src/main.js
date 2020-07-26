@@ -10,12 +10,21 @@ var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
+//create another html tag for the active red star, apply hidden value to it
+//in the CSS.
+//add conditional to event listener to target the star onclick
+//T O G G L E
+
+
 window.addEventListener("click", function(event) {
   if (event.target.className === "box-x") {
     removeCard(event);
   }
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
     createIdeaCard(event);
+  }
+  if (event.target.className === "box-star") {
+    toggleStars(event);
   }
 });
 window.addEventListener("keyup", keyHandler);
@@ -39,8 +48,29 @@ function removeCard(event) {
     }
   };
 
+function toggleStars(event) {
+  if (event.target.src == "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg") {
+    event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star-active.svg"
+  } else {
+    event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
+  }
+  
+  console.log(event.target.src)
+  // event.target.src = "box-star"
+
+  // inactive.classList.add("hidden");
+  // active.classList.remove("hidden");
+  // var inactiveStar = event.target
+  // var star = event.target.src
+  // star = "assets/star-active.svg"
+  // star.classList.toggle("hidden")
+  // console.log(event.target)
+  //if box-star does not have a hidden, give it one onclick, remove hidden from other star
+
+  }
+
   function clearFields() {
-    titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er 
+    titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
     bodyInput.value = "";
   };
 
@@ -52,7 +82,7 @@ function displayIdeas(newIdea) {
   var savedIdeaCard = `
     <div class="idea-box">
       <div class="box-header">
-        <img src="assets/star-active.svg" alt="Star Icon" class="box-star">
+        <img src="assets/star.svg" alt="Inactive Star Icon" class="box-star">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
       </div>
       <div>
@@ -67,7 +97,7 @@ function displayIdeas(newIdea) {
   `;
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
-
+//
 function enableButton(){
   saveIdeaButton.classList.add("save-idea-active");
 };
