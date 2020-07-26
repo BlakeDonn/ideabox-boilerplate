@@ -237,7 +237,11 @@ hr {
   border: 1px solid #6E646B;
 }
 
-.box-star {
+.hidden {
+  display: none;
+}
+
+.box-star, .active-box-star {
   height: 3em;
   width: 3em;
 }
