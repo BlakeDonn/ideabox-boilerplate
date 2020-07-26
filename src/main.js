@@ -54,8 +54,8 @@ function toggleStars(event) {
   } else {
     event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
   }
-  
-  console.log(event.target.src)
+
+  console.log(event.target)
   // event.target.src = "box-star"
 
   // inactive.classList.add("hidden");
