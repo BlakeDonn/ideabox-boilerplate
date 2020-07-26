@@ -48,26 +48,28 @@ function removeCard(event) {
     }
   };
 
-function toggleStars(event) {
-  if (event.target.src == "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg") {
-    event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star-active.svg"
-  } else {
-    event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
+
+function toggleStars(event){
+  var selectedIdea = event.target.closest(".idea-box");
+  var selectedID = event.target.id;
+    for (var i = 0; i < savedIdeas.length; i++) {
+      if (savedIdeas[i].id == selectedID) {
+        event.target.src = savedIdeas[i].updateIdea();
   }
+}
+}
 
-  console.log(event.target)
-  // event.target.src = "box-star"
 
-  // inactive.classList.add("hidden");
-  // active.classList.remove("hidden");
-  // var inactiveStar = event.target
-  // var star = event.target.src
-  // star = "assets/star-active.svg"
-  // star.classList.toggle("hidden")
+
+
+  // if (event.target.src == "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg") {
+  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star-active.svg"
+  // } else {
+  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
+  // }
+  //
   // console.log(event.target)
-  //if box-star does not have a hidden, give it one onclick, remove hidden from other star
 
-  }
 
   function clearFields() {
     titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
@@ -82,7 +84,7 @@ function displayIdeas(newIdea) {
   var savedIdeaCard = `
     <div class="idea-box">
       <div class="box-header">
-        <img src="assets/star.svg" alt="Inactive Star Icon" class="box-star">
+        <img src="assets/star.svg" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
       </div>
       <div>
