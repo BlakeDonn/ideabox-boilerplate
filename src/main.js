@@ -11,22 +11,22 @@ var ideaCardArea = document.querySelector(".idea-cards");
 var savedIdeas = [];
 
 window.addEventListener("click", function(event) {
-  clickHandler(event);
   if (event.target.className === "box-x") {
-    removeCard(event)
+    removeCard(event);
+  }
+  if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
+    createIdeaCard(event);
   }
 });
 window.addEventListener("keyup", keyHandler);
 
-function clickHandler(event) {
-  if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
+function createIdeaCard(event) {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     savedIdeas.push(newIdea);
     displayIdeas(newIdea);
     titleInput.value = "";
     bodyInput.value = "";
     disableButton();
-  }
 };
 
 function removeCard(event) {
