@@ -23,9 +23,8 @@ window.addEventListener("keyup", keyHandler);
 function createIdeaCard(event) {
     var newIdea = new Idea(titleInput.value, bodyInput.value);
     savedIdeas.push(newIdea);
+    clearFields();
     displayIdeas(newIdea);
-    titleInput.value = "";
-    bodyInput.value = "";
     disableButton();
 };
 
@@ -38,6 +37,11 @@ function removeCard(event) {
         selectedIdea.remove();
       }
     }
+  };
+
+  function clearFields() {
+    titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er 
+    bodyInput.value = "";
   };
 
 function keyHandler(){
