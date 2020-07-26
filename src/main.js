@@ -10,74 +10,40 @@ var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
-//create another html tag for the active red star, apply hidden value to it
-//in the CSS.
-//add conditional to event listener to target the star onclick
-//T O G G L E
-
-
+window.addEventListener("keyup", keyHandler);
 window.addEventListener("click", function(event) {
-  if (event.target.className === "box-x") {
-    removeCard(event);
-  }
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
     createIdeaCard(event);
+  }
+  if (event.target.className === "box-x") {
+    removeCard(event);
   }
   if (event.target.className === "box-star") {
     toggleStars(event);
   }
 });
-window.addEventListener("keyup", keyHandler);
-
-function createIdeaCard(event) {
-    var newIdea = new Idea(titleInput.value, bodyInput.value);
-    savedIdeas.push(newIdea);
-    clearFields();
-    displayIdeas(newIdea);
-    disableButton();
-};
-
-function removeCard(event) {
-    var selectedIdea = event.target.closest(".idea-box");
-    var selectedID = event.target.id;
-    for (var i = 0; i < savedIdeas.length; i++) {
-      if (savedIdeas[i].id == selectedID) {
-        savedIdeas.splice(i, 1);
-        selectedIdea.remove();
-      }
-    }
-  };
-
-
-function toggleStars(event){
-  var selectedIdea = event.target.closest(".idea-box");
-  var selectedID = event.target.id;
-    for (var i = 0; i < savedIdeas.length; i++) {
-      if (savedIdeas[i].id == selectedID) {
-        event.target.src = savedIdeas[i].updateIdea();
-  }
-}
-}
-
-
-
-
-  // if (event.target.src == "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg") {
-  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star-active.svg"
-  // } else {
-  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
-  // }
-  //
-  // console.log(event.target)
-
-
-  function clearFields() {
-    titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
-    bodyInput.value = "";
-  };
 
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
+};
+
+function createIdeaCard(event) {
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  savedIdeas.push(newIdea);
+  clearFields();
+  displayIdeas(newIdea);
+  disableButton();
+};
+
+function removeCard(event) {
+  var selectedIdea = event.target.closest(".idea-box");
+  var selectedID = event.target.id;
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if (savedIdeas[i].id == selectedID) {
+      savedIdeas.splice(i, 1);
+      selectedIdea.remove();
+    }
+  }
 };
 
 function displayIdeas(newIdea) {
@@ -95,11 +61,25 @@ function displayIdeas(newIdea) {
         <img src="assets/comment.svg" alt="Add Comment Icon">
         <h3 class="header-text">Comment</h3>
       </div>
-    </div>
-  `;
+    </div>`;
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
-//
+
+function toggleStars(event){
+  var selectedIdea = event.target.closest(".idea-box");
+  var selectedID = event.target.id;
+    for (var i = 0; i < savedIdeas.length; i++) {
+      if (savedIdeas[i].id == selectedID) {
+        event.target.src = savedIdeas[i].updateIdea();
+    }
+  }
+};
+
+function clearFields() {
+  titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
+  bodyInput.value = "";
+};
+
 function enableButton(){
   saveIdeaButton.classList.add("save-idea-active");
 };
