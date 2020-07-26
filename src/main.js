@@ -12,8 +12,9 @@ var savedIdeas = [];
 
 window.addEventListener("click", function(event) {
   clickHandler(event);
-  removeCard(event);
-
+  if (event.target.className === "box-x") {
+    removeCard(event)
+  }
 });
 window.addEventListener("keyup", keyHandler);
 
@@ -26,10 +27,9 @@ function clickHandler(event) {
     bodyInput.value = "";
     disableButton();
   }
-}
+};
 
 function removeCard(event) {
-  if (event.target.className === "box-x") {
     var selectedIdea = event.target.closest(".idea-box");
     var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
@@ -38,12 +38,11 @@ function removeCard(event) {
         selectedIdea.remove();
       }
     }
-  }
-}
+  };
 
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
-}
+};
 
 function displayIdeas(newIdea) {
   var savedIdeaCard = `
