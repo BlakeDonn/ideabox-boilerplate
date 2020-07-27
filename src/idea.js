@@ -12,7 +12,12 @@ class Idea {
 
   }
   updateIdea() {
-
+    this.star = !this.star;
+    if (this.star) {
+      return "assets/star-active.svg";
+    }
+    else {
+      return "assets/star.svg";
+    }
   }
-
 }
