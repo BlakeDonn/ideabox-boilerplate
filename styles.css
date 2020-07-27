@@ -125,6 +125,7 @@ hr {
   width: 490px;
   border: 2px solid #5356A4;
   border-radius: .15em;
+  outline: none;
 }
 
 .h3-body {
@@ -139,6 +140,7 @@ hr {
   padding-bottom: 20px;
   border: 2px solid #5356A4;
   border-radius: .15em;
+  outline: none;
 }
 
 .save-idea-button {
