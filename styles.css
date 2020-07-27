@@ -91,7 +91,6 @@ hr {
   font-weight: bolder;
   font-size: 1.75em;
   display: flex;
-  grid-column: 2;
   justify-content: flex-start;
   margin-top: 1em;
   padding-bottom: 25px;
@@ -301,9 +300,16 @@ hr {
     grid-template-columns: 1fr 1fr;
   }
 
+  .menu {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
   .ideabox {
     display: flex;
-    text-align: center;
   }
 
   .filter {
@@ -317,21 +323,12 @@ hr {
     width: 3em;
     height: 2.5em;
     align-items: center;
-    justify-content: flex-start;
   }
 
   .hamburger-icon {
     height: 55px;
     width: 55px;
     padding-left: 15px;
-  }
-
-  .menu {
-    display: flex;
-    height: 60px;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
   }
 
   hr {
@@ -343,10 +340,6 @@ hr {
   }
  }
 @media only screen and (max-width: 600px) {
-
-  body {
-    flex-direction: column;
-  }
 
   .idea-cards {
    grid-template-columns: 1fr;
@@ -373,7 +366,6 @@ hr {
 
   .idea-form {
     padding: 6% 0;
-    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,7 +379,7 @@ hr {
     opacity: .65;
   }
   .title-input {
-    height: 55px;
+    height: 50px;
     width: 85%;
     border: 2px solid #5356A4;
     border-radius: .15em;
