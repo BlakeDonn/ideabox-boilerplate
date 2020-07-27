@@ -10,11 +10,9 @@ var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
-//create another html tag for the active red star, apply hidden value to it
-//in the CSS.
-//add conditional to event listener to target the star onclick
-//T O G G L E
-
+window.addEventListener('load', function(event){
+  ;
+})
 
 window.addEventListener("click", function(event) {
   if (event.target.className === "box-x") {
@@ -35,41 +33,25 @@ function createIdeaCard(event) {
     clearFields();
     displayIdeas(newIdea);
     disableButton();
+    newIdea.saveToStorage();
 };
 
 function removeCard(event) {
-    var selectedIdea = event.target.closest(".idea-box");
-    var selectedID = event.target.id;
-    for (var i = 0; i < savedIdeas.length; i++) {
-      if (savedIdeas[i].id == selectedID) {
-        savedIdeas.splice(i, 1);
-        selectedIdea.remove();
-      }
-    }
-  };
-
+  var selectedIdea = event.target.closest(".idea-box");
+  savedIdeas.splice(iterateIdeas(event), 1);
+  selectedIdea.remove(selectedIdea);
+  }
 
 function toggleStars(event){
-  var selectedIdea = event.target.closest(".idea-box");
+   iterateIdeas(event).updateIdea(event);
+}
+
+function iterateIdeas(event){
   var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
-      if (savedIdeas[i].id == selectedID) {
-        event.target.src = savedIdeas[i].updateIdea();
+      return savedIdeas[i].id == selectedID && event.target.classList[0] == "box-star" ? savedIdeas[i] : i;
   }
-}
-}
-
-
-
-
-  // if (event.target.src == "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg") {
-  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star-active.svg"
-  // } else {
-  //   event.target.src = "file:///Users/brigette.doelp/turing/mod1repeat/ideabox-boilerplate/assets/star.svg"
-  // }
-  //
-  // console.log(event.target)
-
+};
 
   function clearFields() {
     titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
@@ -99,7 +81,7 @@ function displayIdeas(newIdea) {
   `;
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
-//
+
 function enableButton(){
   saveIdeaButton.classList.add("save-idea-active");
 };

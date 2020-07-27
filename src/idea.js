@@ -5,19 +5,21 @@ class Idea {
     this.body = body;
     this.star = false;
   }
-  saveToStorage() {
 
+  saveToStorage() {
+    var stringIdea = JSON.stringify(this);
+    localStorage.setItem('localIdeas', stringIdea );
   }
   deleteFromStorage() {
 
   }
-  updateIdea() {
+  updateIdea(event) {
     this.star = !this.star;
     if (this.star) {
-      return "assets/star-active.svg";
+      event.target.src = "assets/star-active.svg";
     }
     else {
-      return "assets/star.svg";
+      event.target.src = "assets/star.svg";
     }
   }
 }
