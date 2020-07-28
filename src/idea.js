@@ -6,7 +6,9 @@ class Idea {
     this.star = false;
   }
   saveToStorage() {
-
+    var stringyObject = JSON.stringify(this)
+    console.log(this)
+    console.log(stringyObject)
   }
   deleteFromStorage() {
 
