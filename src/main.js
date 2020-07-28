@@ -30,7 +30,7 @@ function parseSavedIdeas() {
   if (parseSavedIdea != null) {
     for (var i = 0; i < parseSavedIdea.length; i++) {
       var reinIdea = new Idea(parseSavedIdea[i].title, parseSavedIdea[i].body, parseSavedIdea[i].id, parseSavedIdea[i].star);
-      savedIdeas.unshift(reinIdea);
+      savedIdeas.push(reinIdea);
       displayIdeas(savedIdeas[i]);
     }
   }
@@ -56,8 +56,8 @@ function removeCard(event) {
     if (savedIdeas[i].id == selectedID) {
       savedIdeas.splice(i, 1);
       selectedIdea.remove();
-      console.log(savedIdeas[i])
       // savedIdeas[i].deleteFromStorage();
+      console.log(savedIdeas[i])
     }
   }
 };
