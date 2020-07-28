@@ -301,7 +301,6 @@ hr {
   }
 
   .menu {
-    display: flex;
     height: 60px;
     align-items: center;
     justify-content: space-between;
@@ -310,6 +309,7 @@ hr {
 
   .ideabox {
     display: flex;
+    align-self: center;
   }
 
   .filter {
