@@ -30,8 +30,8 @@ function parseSavedIdeas() {
   if (parseSavedIdea != null) {
     for (var i = 0; i < parseSavedIdea.length; i++) {
       var reinIdea = new Idea(parseSavedIdea[i].title, parseSavedIdea[i].body, parseSavedIdea[i].id, parseSavedIdea[i].star);
-      savedIdeas.push(reinIdea);
-      displayIdeas(parseSavedIdea[i]);
+      savedIdeas.unshift(reinIdea);
+      displayIdeas(savedIdeas[i]);
     }
   }
 }
@@ -42,9 +42,9 @@ function keyHandler(){
 
 function createIdeaCard(event) {
   var newIdea = new Idea(titleInput.value, bodyInput.value);            // refactor
-  savedIdeas.push(newIdea);
+  savedIdeas.unshift(newIdea);
   clearFields();
-  displayIdeas(newIdea);
+  displayIdeas(savedIdeas[0]);
   disableButton();
   newIdea.saveToStorage();
 };
