@@ -33,6 +33,7 @@ function createIdeaCard(event) {
   clearFields();
   displayIdeas(newIdea);
   disableButton();
+  newIdea.saveToStorage()
 };
 
 function removeCard(event) {
