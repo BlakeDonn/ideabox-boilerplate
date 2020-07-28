@@ -12,7 +12,7 @@ class Idea {
   }
 
   deleteFromStorage() {
-    console.log(this.id);
+    // console.log(this.id);
     var retrieveRemovedIdeas = localStorage.getItem("storedIdeas");
     var parseRemovedIdeas = JSON.parse(retrieveRemovedIdeas);
     console.log(parseRemovedIdeas)
@@ -21,6 +21,9 @@ class Idea {
         parseRemovedIdeas.splice(i, 1)
       };
     }
+    var stringifiedRemovedIdeas = JSON.stringify(parseRemovedIdeas)
+    localStorage.setItem("storedIdeas", stringifiedRemovedIdeas)
+    console.log(parseRemovedIdeas)
   }
   updateIdea() {
     this.star = !this.star;
