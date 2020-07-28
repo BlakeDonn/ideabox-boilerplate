@@ -22,6 +22,14 @@ window.addEventListener("click", function(event) {
     toggleStars(event);
   }
 });
+window.addEventListener("load", displaySavedIdeas);
+
+function displaySavedIdeas() {
+  var retrieveSavedIdea = localStorage.getItem("storedIdeas");
+  var parseSavedIdea = JSON.parse(retrieveSavedIdea);
+  savedIdeas = parseSavedIdea;
+  displayIdeas();
+}
 
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
@@ -33,7 +41,7 @@ function createIdeaCard(event) {
   clearFields();
   displayIdeas(newIdea);
   disableButton();
-  newIdea.saveToStorage()
+  newIdea.saveToStorage();
 };
 
 function removeCard(event) {

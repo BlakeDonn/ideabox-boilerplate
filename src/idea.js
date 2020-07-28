@@ -6,9 +6,9 @@ class Idea {
     this.star = false;
   }
   saveToStorage() {
-    var stringifiedIdea = JSON.stringify(this)
-    console.log(stringifiedIdea)
-    localStorage.setItem(this.id, stringifiedIdea)
+    var stringifiedIdea = JSON.stringify(savedIdeas);
+    localStorage.setItem("storedIdeas", stringifiedIdea);
+    console.log(localStorage.storedIdeas);
   }
   deleteFromStorage() {
 
