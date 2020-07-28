@@ -18,6 +18,9 @@ window.addEventListener("click", function(event) {
   if (event.target.className === "box-star") {
     toggleStars(event);
   }
+  if (event.target.className === "show-starred") {
+    toggleSaved(event);
+  }
 });
 
 function parseSavedIdeas() {
@@ -60,7 +63,7 @@ function removeCard(event) {
 function displayIdeas(newIdea) {
   var htmlStar = newIdea.star ? "assets/star-active.svg" : "assets/star.svg";
   var savedIdeaCard = `
-    <div class="idea-box">
+    <div class="idea-box" id="${newIdea.id}">
       <div class="box-header">
         <img src="${htmlStar}" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
@@ -77,14 +80,25 @@ function displayIdeas(newIdea) {
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
 
-function toggleStars(event){
+function toggleStars(event) {
   var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
       if (savedIdeas[i].id == selectedID) {
         event.target.src = savedIdeas[i].updateIdea();
+        console.log(event.target);
     }
   }
 };
+
+function toggleSaved() {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if (!savedIdeas[i].star) {
+      var notStarredCard = document.getElementById(savedIdeas[i].id);
+      notStarredCard.classList.add("hidden");
+    }
+  }
+  console.log(notStarredCard.classList)
+}
 
 function clearFields() {
   titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
@@ -98,5 +112,3 @@ function enableButton(){
 function disableButton(){
   saveIdeaButton.classList.remove("save-idea-active");
 };
-
-//
