@@ -27,9 +27,11 @@ window.addEventListener("load", parseSavedIdeas);
 function parseSavedIdeas() {
   var retrieveSavedIdea = localStorage.getItem("storedIdeas");
   var parseSavedIdea = JSON.parse(retrieveSavedIdea);
-  savedIdeas = parseSavedIdea;
-  for (var i = 0; i < savedIdeas.length; i++) {
-    displayIdeas(savedIdeas[i]);
+  if (parseSavedIdea != null) {
+    savedIdeas = parseSavedIdea;
+    for (var i = 0; i < savedIdeas.length; i++) {
+      displayIdeas(savedIdeas[i]);
+    }
   }
 }
 
