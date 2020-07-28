@@ -2,7 +2,7 @@ class Idea {
   constructor(title, body, id, star) {
     this.title = title;
     this.body = body;
-    this.id = Date.now();
+    this.id = Date.now() + Math.random();
     this.star = false;
   }
   saveToStorage() {
