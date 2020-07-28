@@ -22,13 +22,15 @@ window.addEventListener("click", function(event) {
     toggleStars(event);
   }
 });
-window.addEventListener("load", displaySavedIdeas);
+window.addEventListener("load", parseSavedIdeas);
 
-function displaySavedIdeas() {
+function parseSavedIdeas() {
   var retrieveSavedIdea = localStorage.getItem("storedIdeas");
   var parseSavedIdea = JSON.parse(retrieveSavedIdea);
   savedIdeas = parseSavedIdea;
-  displayIdeas();
+  for (var i = 0; i < savedIdeas.length; i++) {
+    displayIdeas(savedIdeas[i]);
+  }
 }
 
 function keyHandler(){
