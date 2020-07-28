@@ -2,24 +2,26 @@ class Idea {
   constructor(title, body, id, star) {
     this.title = title;
     this.body = body;
-    this.id = Date.now();
-    this.star = false;
+    this.id = Date.now() + Math.random();
+    this.star =  star || false;
   }
+
   saveToStorage() {
     var stringifiedIdea = JSON.stringify(savedIdeas);
     localStorage.setItem("storedIdeas", stringifiedIdea);
   }
 
   deleteFromStorage() {
-    console.log("hi!")
+    return console.log("hi!")
   }
   updateIdea() {
     this.star = !this.star;
-    if (this.star) {
-      return "assets/star-active.svg";
-    }
-    else {
-      return "assets/star.svg";
-    }
-  }
+      this.saveToStorage();
+      if (this.star) {
+        return "assets/star-active.svg";
+      }
+      else {
+        return "assets/star.svg";
+      }
+}
 }
