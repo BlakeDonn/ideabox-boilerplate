@@ -1,15 +1,12 @@
-var hamburgerButton = document.querySelector(".hamburger-button");
-var showStarredButton = document.querySelector(".show-starred");
 var saveIdeaButton = document.querySelector(".save-idea-button");
-var searchIdeaButton = document.querySelector(".search-idea-button");
 var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
-//possible local selectors below
 var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
+window.addEventListener("load", parseSavedIdeas);
 window.addEventListener("keyup", keyHandler);
 window.addEventListener("click", function(event) {
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
@@ -22,7 +19,6 @@ window.addEventListener("click", function(event) {
     toggleStars(event);
   }
 });
-window.addEventListener("load", parseSavedIdeas);
 
 function parseSavedIdeas() {
   var retrieveSavedIdea = localStorage.getItem("storedIdeas");
@@ -102,3 +98,5 @@ function enableButton(){
 function disableButton(){
   saveIdeaButton.classList.remove("save-idea-active");
 };
+
+//
