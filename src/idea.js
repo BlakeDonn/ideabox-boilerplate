@@ -1,17 +1,17 @@
 class Idea {
-  constructor(title, body) {
-    this.id = Date.now();
+  constructor(title, body, id, star) {
     this.title = title;
     this.body = body;
+    this.id = Date.now();
     this.star = false;
   }
   saveToStorage() {
     var stringifiedIdea = JSON.stringify(savedIdeas);
     localStorage.setItem("storedIdeas", stringifiedIdea);
-    console.log(localStorage.storedIdeas);
   }
-  deleteFromStorage() {
 
+  deleteFromStorage() {
+    console.log("hi!")
   }
   updateIdea() {
     this.star = !this.star;
