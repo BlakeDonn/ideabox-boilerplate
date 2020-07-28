@@ -296,6 +296,10 @@ hr {
     flex-direction: column;
   }
 
+  .show-starred {
+    display: none;
+  }
+
    .idea-cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -335,11 +339,13 @@ hr {
     display: none;
   }
 
-  .hidden {
-    visibility: hidden;
-  }
+
  }
 @media only screen and (max-width: 600px) {
+
+  .show-starred {
+    display: none;
+  }
 
   .idea-cards {
    grid-template-columns: 1fr;
