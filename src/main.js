@@ -30,7 +30,7 @@ function parseSavedIdeas() {
   if (parseSavedIdea != null) {
     for (var i = 0; i < parseSavedIdea.length; i++) {
       var reinIdea = new Idea(parseSavedIdea[i].title, parseSavedIdea[i].body, parseSavedIdea[i].id, parseSavedIdea[i].star);
-      savedIdeas.unshift(reinIdea);
+      savedIdeas.push(reinIdea);
       displayIdeas(savedIdeas[i]);
     }
   }
@@ -50,23 +50,23 @@ function createIdeaCard(event) {
 };
 
 function removeCard(event) {
-  var selectedIdea = event.target.closest(".idea-box");
+  var selectedIdea = event.target.closest(".idea-box"); //buggy
   var selectedID = event.target.id;
   for (var i = 0; i < savedIdeas.length; i++) {
     if (savedIdeas[i].id == selectedID) {
+      savedIdeas[i].deleteFromStorage()
       savedIdeas.splice(i, 1);
       selectedIdea.remove();
-      console.log(savedIdeas[i])
-      // savedIdeas[i].deleteFromStorage();
     }
   }
 };
 
 function displayIdeas(newIdea) {
+  var htmlStar = newIdea.star ? "assets/star-active.svg" : "assets/star.svg";
   var savedIdeaCard = `
     <div class="idea-box">
       <div class="box-header">
-        <img src="assets/star.svg" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
+        <img src="${htmlStar}" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
       </div>
       <div>
@@ -82,7 +82,6 @@ function displayIdeas(newIdea) {
 };
 
 function toggleStars(event){
-  var selectedIdea = event.target.closest(".idea-box");
   var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
       if (savedIdeas[i].id == selectedID) {
