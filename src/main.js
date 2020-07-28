@@ -85,7 +85,6 @@ function toggleStars(event) {
     for (var i = 0; i < savedIdeas.length; i++) {
       if (savedIdeas[i].id == selectedID) {
         event.target.src = savedIdeas[i].updateIdea();
-        console.log(event.target);
     }
   }
 };
@@ -97,7 +96,6 @@ function toggleSaved() {
       notStarredCard.classList.add("hidden");
     }
   }
-  console.log(notStarredCard.classList)
 }
 
 function clearFields() {
