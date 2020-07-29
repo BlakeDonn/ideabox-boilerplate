@@ -12,18 +12,17 @@ This was a group project that was designed to store and organize ideas. A use ca
 * Utilize `data-*` attributes.
 * Incorporate & iterate over arrays in order to filter what is being displayed.
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP.
-* Use and understand event delegation and bubbling. 
+* Use and understand event delegation and bubbling.
 
-## Setup
+## Planning ##
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+This group project was created using Atom as the text editor, and our project management was done through our private channel in slack. We references MDN documentation, lesson plans, CSS tricks, and notes for information. We contacted peers and mentors for support when we became stuck. Our remote repository is stored on GitHub.
 
-## Progression
+We were given seven days for this project.
+
+** Challenges **
+
+
 
 ### Iteration 0 - Desktop Layout
 
