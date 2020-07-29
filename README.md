@@ -6,12 +6,13 @@ This was a group project that was designed to store and organize ideas. A use ca
 
 ## Learning Goals ##
 
-* Continue to improve on building responsive client-side applications with good user feedback
-* Understand how to implement client-side data persistence using `localStorage`
-* Understand what it looks like to have a separate data model (using a class) and DOM model
-* Utilize `data-*` attributes
-* Incorporate & iterate over arrays in order to filter what is being displayed
-* Craft code with clean style, using small functions that show trends toward DRYness and SRP
+* Continue to improve on building responsive client-side applications with good user feedback.
+* Understand how to implement client-side data persistence using `localStorage`.
+* Understand what it looks like to have a separate data model (using a class) and DOM model.
+* Utilize `data-*` attributes.
+* Incorporate & iterate over arrays in order to filter what is being displayed.
+* Craft code with clean style, using small functions that show trends toward DRYness and SRP.
+* Use and understand event delegation and bubbling. 
 
 ## Setup
 
