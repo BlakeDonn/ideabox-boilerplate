@@ -304,15 +304,25 @@ hr {
   body {
     flex-direction: column;
   }
+  .modalView {
+    height: 150px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+  }
 
   .show-starred {
-    display: none;
+
   }
 
-  .show-all {
-    display: none;
+   .show-all {
+
   }
 
+  .modalView h1 {
+    align-self: center;
+  }
 
    .idea-cards {
     grid-template-columns: 1fr 1fr;
@@ -330,9 +340,9 @@ hr {
     align-self: center;
   }
 
-  .filter {
+  /* .filter {
     display: none;
-  }
+  } */
 
   .hamburger-button {
     display: flex;
@@ -358,17 +368,16 @@ hr {
 @media only screen and (max-width: 600px) {
 
   .show-starred {
-    display: none;
   }
 
   .show-all {
-    display: none;
   }
 
   .idea-cards {
    grid-template-columns: 1fr;
    width: 90%;
  }
+
   .ideabox {
     display: flex;
     text-align: center;
@@ -394,6 +403,7 @@ hr {
     flex-direction: column;
     align-items: center;
   }
+
   .h3-title {           /*refactor*/
     align-self: center;
     padding-top: 0px;
@@ -402,12 +412,14 @@ hr {
     color: #1F1F3D;
     opacity: .65;
   }
+
   .title-input {
     height: 50px;
     width: 85%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
+
   .h3-body {
     align-self: center;
     padding-top: 5%;
@@ -416,12 +428,14 @@ hr {
     color: #1F1F3D;
     opacity: .65;
   }
+
   .body-input {
     height: 105px;
     width: 85%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
+
   .save-idea-button {
     width: 88%;
     text-align: center;
@@ -431,6 +445,7 @@ hr {
     color: #FFFFFF;
     padding: 2%;
   }
+
   .search {
     width: 88%;
     height: 3.25em;
@@ -438,6 +453,7 @@ hr {
     justify-content: flex-start;
     align-items: center;
   }
+
   .search-idea-button {
     background-color: #1F1F3D;
     background-position: center center;
@@ -448,6 +464,7 @@ hr {
     border-radius: .15em;
     border-right: none;
   }
+
   .search-idea-button img {
     vertical-align: middle;
     height: 75%;

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="purple-1">
-    <nav class="menu purple-4 hidden">
+    <nav class="menu hidden purple-4">
       <button class="hamburger-button hidetheburger">
         <img class="hamburger-icon" src="assets/menu.svg" alt="Menu Hamburger">
       </button>
@@ -20,20 +20,22 @@
       </section>
       <hr>
     </nav>
-    <section class = "modalView purple-4">
-      <img class="hamburger-icon" src="assets/menu-close.svg" alt="Menu Close">
-      <h1 class = "header-text modal-h1">IdeaBox</h1>
-      <p class="filter">Filter Starred Ideas</p>
-      <button type="button" class="show-starred" >Show Starred Ideas</button>
-      <button type="button" class="show-all ">Show All Ideas</button>
-    </section>
+    <div class="modal">
+      <section class = "modal-content purple-4">
+        <img class="hamburger-icon" src="assets/menu-close.svg" alt="Menu Close">
+        <h1 class = "header-text modal-h1">IdeaBox</h1>
+        <p class="filter">Filter Starred Ideas</p>
+        <button type="button" class="show-starred header-text" >Show Starred Ideas</button>
+        <button type="button" class="show-all header-text hidden">Show All Ideas</button>
+      </section>
+    </div>
     <main class="ideas">
       <section class="idea-form purple-2">
         <h3 class = "h3-title header-text">Title</h3>
         <textarea class = "title-input" name="name" rows="1" value""></textarea>
         <h3 class = "h3-body header-text">Body</h3>
         <textarea class = "body-input" name="name" rows="8" value=""></textarea>
-        <button class = "save-idea-button">Save</button>
+        <button class = "save-idea-button header-text">Save</button>
         <div class="search">
           <button class = "search-idea-button" type="button" ><img src="assets/search.svg" alt="Search Icon"></button>
           <input class = "search-idea-input body-text" type="text" value="" placeholder = 'Search ideas'>
