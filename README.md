@@ -1,12 +1,10 @@
 # Ideabox Group Project
 
-Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
+### Project Description ###
 
-Throughout the project, one of our focuses will be on providing a fluid and responsive client-side interface. To this end, we'll rely on JavaScript and to implement snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions.  Our goal is to also incorporate an agile workflow by incorporating two weekly sprints.
+This was a group project that was designed to store and organize ideas. A use can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to local storage, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suit both desktop, tablet, and mobile views.
 
-*Note*: Expectations listed for Iteration 0-1 should be complete by your first check-in. No JavaScript should be written before that check-in, unless you get approval to move ahead with functionality from your Project Manager.
-
-## Learning Goals
+## Learning Goals ##
 
 * Continue to improve on building responsive client-side applications with good user feedback
 * Understand how to implement client-side data persistence using `localStorage`
