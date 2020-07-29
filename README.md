@@ -22,7 +22,17 @@ We were given seven days for this project.
 
 ** Challenges **
 
+* Following the git workflow with multiple branches and group members. This was especially challenging at times when multiple branches were open and actively being worked on at one time.
+* Due to a global pandemic, the project needed to be done entirely remotely. All three members of the teams reside and did work across different time zones.
+* Creating a smooth transition between mobile, tablet, and desktop view.
 
+** Wins **
+
+* Working on JavaScript, CSS, and HTML in a collaborative environment while working under deadlines.
+* Learning how to use and manage local storage.
+* Becoming used to using media queries in CSS.
+* Properly implementing event delegation.
+* We are proud of the code that was written, and proud of the fact that the website functions as expected up through iteration 4.
 
 ### Iteration 0 - Desktop Layout
 
