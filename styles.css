@@ -15,6 +15,10 @@ main {
   flex: 1;
 }
 
+h1 {
+  font-size: 1.25em;
+}
+
 /*=== Background Colors ===*/
 
 .purple-1 {
@@ -75,7 +79,7 @@ main {
   padding-top: .5em;
   padding-bottom: .5em;
   background-color: #5356A4;
-  border: 2px solid #1F1F3D;
+  border: 1.5px solid #1F1F3D;
   outline: none;
 }
 .show-all {
@@ -102,7 +106,6 @@ hr {
   color: #EAEAF4;
   font-family: 'Open Sans';
   font-weight: bolder;
-  font-size: 1.75em;
   display: flex;
   justify-content: flex-start;
   margin-top: 1em;
@@ -135,7 +138,7 @@ hr {
 .title-input {
   height: 55px;
   width: 490px;
-  border: 2px solid #5356A4;
+  border: 1.5px solid #5356A4;
   border-radius: .15em;
   outline: none;
 }
@@ -150,7 +153,7 @@ hr {
   height: 105px;
   width: 490px;
   padding-bottom: 20px;
-  border: 2px solid #5356A4;
+  border: 1.5px solid #5356A4;
   border-radius: .15em;
   outline: none;
 }
@@ -163,7 +166,7 @@ hr {
   background-color: #1F1F3D;
   color: #FFFFFF;
   opacity: 0.65;
-  border: 2px solid #5356A4;
+  border: 1.5px solid #5356A4;
   border-radius: .15em;
   outline: none;
   font-size: 1.75em;
@@ -188,7 +191,7 @@ hr {
   background-position: center center;
   height: 3.33em;
   width: 3.33em;
-  border: 1px solid #1F1F3D;
+  border: 1.5px solid #1F1F3D;
   border-radius: .15em;
   border-right: none;
   outline: none;
@@ -204,7 +207,7 @@ hr {
 .search-idea-input {
   height: 3em;
   width: 500px;
-  border: 1px solid #5356A4;
+  border: 1.5px solid #5356A4;
   border-left: none;
   outline: none;
 }
@@ -227,7 +230,7 @@ hr {
 .idea-box {
   width: 100%;
   background-color: #FFFFFF;
-  border: 1px solid #6E646B;
+  border: 1.5px solid #6E646B;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -255,7 +258,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 0px 3px;
-  border: 1px solid #6E646B;
+  border: 1.5px solid #6E646B;
 }
 
 .hidden {
@@ -367,7 +370,6 @@ hr {
 
   .modal-content h1 {
     align-self: center;
-    font-size: 1.25em;
     padding-top: 3%;
     padding-bottom: 4%;
   }
@@ -477,7 +479,6 @@ hr {
   .title-input {
     height: 50px;
     width: 88%;
-    border: 2px solid #5356A4;
     border-radius: .15em;
   }
 
@@ -493,7 +494,6 @@ hr {
   .body-input {
     height: 105px;
     width: 88%;
-    border: 2px solid #5356A4;
     border-radius: .15em;
   }
 
@@ -520,8 +520,6 @@ hr {
     background-position: center center;
     height: 3.25em;
     width: 3.25em;
-    border: 2px solid #1F1F3D;
-    border-radius: .15em;
     border-right: none;
   }
 
