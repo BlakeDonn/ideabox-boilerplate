@@ -163,11 +163,11 @@ hr {
   background-color: #1F1F3D;
   color: #FFFFFF;
   opacity: 0.65;
-  padding: 10px;
   border: 2px solid #5356A4;
   border-radius: .15em;
   outline: none;
   font-size: 1.75em;
+  padding: 15px;
 }
 
 .save-idea-active{
@@ -188,10 +188,11 @@ hr {
   background-position: center center;
   height: 3.33em;
   width: 3.33em;
-  opacity: .6;
-  border: 2px solid #5356A4;
+  border: 1px solid #1F1F3D;
   border-radius: .15em;
   border-right: none;
+  outline: none;
+  opacity: .6;
 }
 
 .search-idea-button img {
@@ -203,7 +204,9 @@ hr {
 .search-idea-input {
   height: 3em;
   width: 500px;
-  border: 2px solid #5356A4;
+  border: 1px solid #5356A4;
+  border-left: none;
+  outline: none;
 }
 
 ::placeholder {
@@ -293,6 +296,12 @@ hr {
   width: 3em;
 }
 
+.hide-input-text {
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+}
+
 
 /*=== media queries ===*/
 @media only screen and (max-width: 1200px) {
@@ -338,19 +347,22 @@ hr {
 }
 
   .show-starred {
-    align-self: center;
-    width: 90%;
-    padding: 2%;
+    align-self: flex-start;
+    width: 500px;
+    padding: 15px;
+    margin-left: 5%;
     margin-top: 30px;
     margin-bottom: 30px;
-
     font-size: 1.25em;
   }
 
    .show-all {
-    width: 90%;
-    padding: 2%;
-    font-size: 1.5em;
+     align-self: center;
+     width: 90%;
+     padding: 15px;
+     margin-top: 30px;
+     margin-bottom: 30px;
+     font-size: 1.25em;
   }
 
   .modal-content h1 {
@@ -413,7 +425,9 @@ hr {
   }
 
   .show-starred {
+    align-self: center;
     font-size: 1.25em;
+    width: 90%;
   }
 
   .show-all {
@@ -462,7 +476,7 @@ hr {
 
   .title-input {
     height: 50px;
-    width: 85%;
+    width: 88%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
@@ -478,7 +492,7 @@ hr {
 
   .body-input {
     height: 105px;
-    width: 85%;
+    width: 88%;
     border: 2px solid #5356A4;
     border-radius: .15em;
   }
@@ -490,7 +504,6 @@ hr {
     margin-bottom: 1em;
     background-color: #1F1F3D;
     color: #FFFFFF;
-    padding: 2%;
     font-size: 1.25em;
   }
 
@@ -507,8 +520,7 @@ hr {
     background-position: center center;
     height: 3.25em;
     width: 3.25em;
-    opacity: .6;
-    border: 2px solid #5356A4;
+    border: 2px solid #1F1F3D;
     border-radius: .15em;
     border-right: none;
   }
@@ -519,8 +531,7 @@ hr {
     width: 75%;
   }
   .search-idea-input {
-    height: 2.75em;
+    height: 3em;
     width: 95%;
-    border: 2px solid #5356A4;
   }
 }
