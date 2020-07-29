@@ -3,6 +3,9 @@ var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
 var ideaCardArea = document.querySelector(".idea-cards");
+var showStarredButton = document.querySelector(".show-starred");
+var showAllButton = document.querySelector(".show-all");
+
 
 var savedIdeas = [];
 
@@ -20,6 +23,9 @@ window.addEventListener("click", function(event) {
   }
   if (event.target.className === "show-starred") {
     toggleSaved(event);
+  }
+  if (event.target.className === "show-all") {
+    toggleAll(event);
   }
 });
 
@@ -96,6 +102,21 @@ function toggleSaved() {
       notStarredCard.classList.add("hidden");
     }
   }
+  toggleHidden()
+}
+
+function toggleAll(){
+  for (var i = 0; i < savedIdeas.length; i++){
+    var notStarredCard = document.getElementById(savedIdeas[i].id);
+    notStarredCard.classList.remove("hidden");
+  }
+  toggleHidden()
+}
+
+
+function toggleHidden(){
+  showStarredButton.classList.toggle("hidden")
+  showAllButton.classList.toggle("hidden")
 }
 
 function clearFields() {

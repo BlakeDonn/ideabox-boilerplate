@@ -75,6 +75,15 @@ main {
   padding-top: .5em;
   padding-bottom: .5em;
 }
+.show-all {
+  width: 15em;
+  color: #EAEAF4;
+  font-family: 'Open Sans';
+  background-color: #353567;
+  margin: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
 
 hr {
   width: 100%;
@@ -300,6 +309,11 @@ hr {
     display: none;
   }
 
+  .show-all {
+    display: none;
+  }
+
+
    .idea-cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -344,6 +358,10 @@ hr {
 @media only screen and (max-width: 600px) {
 
   .show-starred {
+    display: none;
+  }
+
+  .show-all {
     display: none;
   }
 
