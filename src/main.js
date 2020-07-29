@@ -1,15 +1,12 @@
-var hamburgerButton = document.querySelector(".hamburger-button");
-var showStarredButton = document.querySelector(".show-starred");
 var saveIdeaButton = document.querySelector(".save-idea-button");
-var searchIdeaButton = document.querySelector(".search-idea-button");
 var titleInput = document.querySelector(".title-input");
 var bodyInput = document.querySelector(".body-input");
 var searchInput = document.querySelector(".search-idea-input");
-//possible local selectors below
 var ideaCardArea = document.querySelector(".idea-cards");
 
 var savedIdeas = [];
 
+window.addEventListener("load", parseSavedIdeas);
 window.addEventListener("keyup", keyHandler);
 window.addEventListener("click", function(event) {
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
@@ -21,25 +18,42 @@ window.addEventListener("click", function(event) {
   if (event.target.className === "box-star") {
     toggleStars(event);
   }
+  if (event.target.className === "show-starred") {
+    toggleSaved(event);
+  }
 });
+
+function parseSavedIdeas() {
+  var retrieveSavedIdea = localStorage.getItem("storedIdeas");
+  var parseSavedIdea = JSON.parse(retrieveSavedIdea);
+  if (parseSavedIdea != null) {
+    for (var i = 0; i < parseSavedIdea.length; i++) {
+      var reinIdea = new Idea(parseSavedIdea[i].title, parseSavedIdea[i].body, parseSavedIdea[i].id, parseSavedIdea[i].star);
+      savedIdeas.push(reinIdea);
+      displayIdeas(savedIdeas[i]);
+    }
+  }
+}
 
 function keyHandler(){
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
 };
 
 function createIdeaCard(event) {
-  var newIdea = new Idea(titleInput.value, bodyInput.value);
-  savedIdeas.push(newIdea);
+  var newIdea = new Idea(titleInput.value, bodyInput.value);            // refactor
+  savedIdeas.unshift(newIdea);
   clearFields();
-  displayIdeas(newIdea);
+  displayIdeas(savedIdeas[0]);
   disableButton();
+  newIdea.saveToStorage();
 };
 
 function removeCard(event) {
-  var selectedIdea = event.target.closest(".idea-box");
+  var selectedIdea = event.target.closest(".idea-box"); //buggy
   var selectedID = event.target.id;
   for (var i = 0; i < savedIdeas.length; i++) {
     if (savedIdeas[i].id == selectedID) {
+      savedIdeas[i].deleteFromStorage()
       savedIdeas.splice(i, 1);
       selectedIdea.remove();
     }
@@ -47,10 +61,11 @@ function removeCard(event) {
 };
 
 function displayIdeas(newIdea) {
+  var htmlStar = newIdea.star ? "assets/star-active.svg" : "assets/star.svg";
   var savedIdeaCard = `
-    <div class="idea-box">
+    <div class="idea-box" id="${newIdea.id}">
       <div class="box-header">
-        <img src="assets/star.svg" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
+        <img src="${htmlStar}" alt="Inactive Star Icon" class="box-star" id ="${newIdea.id}">
         <img src="assets/delete.svg" alt="Delete Icon" class="box-x" id="${newIdea.id}">
       </div>
       <div>
@@ -65,8 +80,7 @@ function displayIdeas(newIdea) {
   ideaCardArea.insertAdjacentHTML("afterbegin", savedIdeaCard);
 };
 
-function toggleStars(event){
-  var selectedIdea = event.target.closest(".idea-box");
+function toggleStars(event) {
   var selectedID = event.target.id;
     for (var i = 0; i < savedIdeas.length; i++) {
       if (savedIdeas[i].id == selectedID) {
@@ -74,6 +88,15 @@ function toggleStars(event){
     }
   }
 };
+
+function toggleSaved() {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if (!savedIdeas[i].star) {
+      var notStarredCard = document.getElementById(savedIdeas[i].id);
+      notStarredCard.classList.add("hidden");
+    }
+  }
+}
 
 function clearFields() {
   titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
