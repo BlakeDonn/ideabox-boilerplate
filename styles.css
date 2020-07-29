@@ -62,8 +62,8 @@ main {
 .filter {
   color: #BFBFDD;
   font-family: 'Open Sans';
-  margin: 1.2em;
-  font-size: 14px;
+  /* margin: 1.2em;
+  font-size: 14px; */
 }
 
 .show-starred {
@@ -304,28 +304,58 @@ hr {
   body {
     flex-direction: column;
   }
-  .modalView {
-    height: 150px;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    display: flex;
-  }
+
+  .modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+  .modal-content {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #1F1F3D;
+  width: 100%;
+  height: 20%;
+}
+  .filter {
+    color: #BFBFDD;
+    font-family: 'Open Sans';
+    padding-left: 5%;
+    margin-top: 5%;
+}
 
   .show-starred {
-
+    align-self: center;
+    width: 90%;
+    padding: 2%;
+    font-size: 1.75em;
   }
 
    .show-all {
-
+    width: 90%;
+    padding: 2%;
+    font-size: 1.75em;
   }
 
-  .modalView h1 {
+  .modal-content  h1 {
     align-self: center;
+    font-size: 1.25em;
+    padding-top: 2%;
   }
 
-   .idea-cards {
-    grid-template-columns: 1fr 1fr;
+  .hamburger-icon {
+    padding-left: 4%;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 7px;
   }
 
   .menu {
@@ -335,10 +365,15 @@ hr {
     flex-direction: row;
   }
 
+   .idea-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .ideabox {
     display: flex;
     align-self: center;
   }
+
 
   /* .filter {
     display: none;
@@ -351,12 +386,6 @@ hr {
     width: 3em;
     height: 2.5em;
     align-items: center;
-  }
-
-  .hamburger-icon {
-    height: 55px;
-    width: 55px;
-    padding-left: 15px;
   }
 
   hr {
@@ -444,6 +473,7 @@ hr {
     background-color: #1F1F3D;
     color: #FFFFFF;
     padding: 2%;
+    font-size: 1.75em;
   }
 
   .search {
