@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="purple-1">
-    <nav class="menu purple-4">
+    <nav class="menu purple-4 hidden">
       <button class="hamburger-button hidetheburger">
         <img class="hamburger-icon" src="assets/menu.svg" alt="Menu Hamburger">
-        <!-- <img class="hamburger-icon hidden" src="assets/menu-close.svg" alt="Menu Close"> -->
       </button>
       <h1 class="ideabox">IdeaBox</h1>
       <hr>
@@ -21,6 +20,13 @@
       </section>
       <hr>
     </nav>
+    <section class = "modalView purple-4">
+      <img class="hamburger-icon" src="assets/menu-close.svg" alt="Menu Close">
+      <h1 class = "header-text modal-h1">IdeaBox</h1>
+      <p class="filter">Filter Starred Ideas</p>
+      <button type="button" class="show-starred" >Show Starred Ideas</button>
+      <button type="button" class="show-all ">Show All Ideas</button>
+    </section>
     <main class="ideas">
       <section class="idea-form purple-2">
         <h3 class = "h3-title header-text">Title</h3>
