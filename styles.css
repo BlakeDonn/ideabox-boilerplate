@@ -42,7 +42,7 @@ h1 {
   font: 'Open Sans' light;
 }
 
- .menu {
+.menu {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -295,7 +295,7 @@ hr {
 
 @media only screen and (max-width: 900px) {
 
-  body {
+body {
     flex-direction: column;
   }
 
@@ -376,7 +376,7 @@ hr {
 .hamburger-button {
   display: flex;
   background-color: transparent;
-  border: none;
+  border: 0;
   width: 3em;
   height: 2.5em;
   align-items: center;
@@ -434,7 +434,7 @@ hr {
 .hamburger-button {
   display: flex;
   background-color: transparent;
-  border: none;
+  border: 0;
   width: 3em;
   height: 2.5em;
   align-items: center;
