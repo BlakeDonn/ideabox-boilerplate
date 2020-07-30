@@ -49,23 +49,37 @@ We were given seven days to work on this project.
 
 * To search through the ideas made for a specific word or phrase, use the search bar. When typing the phrase, the idea cards will be filtered accordingly.
 
+**Starring an Idea**
+
 ![starring an idea card](https://i.imgur.com/0BPHX6r.gif)
+
+
+**Deleting an Idea**
 
 ![deleting an idea card](https://i.imgur.com/41FqxrT.gif)
 
+
+**Filtering Starred Ideas**
+
 ![filtering starred idea cards](https://i.imgur.com/NlBNKj1.gif)
 
+
+**Searching for an Idea**
+
 ![searching for idea cards](https://i.imgur.com/hodJ3f8.gif)
+
 
 **Mobile View**
 
 ![mobile view](https://i.imgur.com/dmyUr5j.png)
+
 
 **Tablet View**
 
 ![tablet view](https://i.imgur.com/6pCVbQl.png)
 
 **Desktop View**
+
 
 ![desktop view](https://i.imgur.com/SoPmqTd.png)
 
