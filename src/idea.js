@@ -12,19 +12,17 @@ class Idea {
   }
 
   deleteFromStorage() {
-    // console.log(this.id);
     var retrieveRemovedIdeas = localStorage.getItem("storedIdeas");
     var parseRemovedIdeas = JSON.parse(retrieveRemovedIdeas);
-    console.log(parseRemovedIdeas)
     for (var i = 0; i < parseRemovedIdeas.length; i++) {
       if (parseRemovedIdeas[i].id == this.id) {
-        parseRemovedIdeas.splice(i, 1)
+        parseRemovedIdeas.splice(i, 1);
       };
     }
-    var stringifiedRemovedIdeas = JSON.stringify(parseRemovedIdeas)
-    localStorage.setItem("storedIdeas", stringifiedRemovedIdeas)
-    console.log(parseRemovedIdeas)
+    var stringifiedRemovedIdeas = JSON.stringify(parseRemovedIdeas);
+    localStorage.setItem("storedIdeas", stringifiedRemovedIdeas);
   }
+
   updateIdea() {
     this.star = !this.star;
       this.saveToStorage();
@@ -34,12 +32,5 @@ class Idea {
       else {
         return "assets/star.svg";
       }
-}
-}
-
-// JSON.parse the local storage to gain access to individual objects.
-// looping through the objects finding the targeted id of the one clicked
-// remove!
-// put back in storage.
-// update view
-// the end
+    }
+  };
