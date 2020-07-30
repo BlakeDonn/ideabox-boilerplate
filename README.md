@@ -2,7 +2,7 @@
 
 ### Project Description ###
 
-This was a group project that was designed to store and organize ideas. A use can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to local storage, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suitx desktop, tablet, and mobile views.
+This was a group project that was designed to store and organize ideas. A user can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to local storage, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suit desktop, tablet, and mobile views.
 
 ## Learning Goals ##
 
@@ -87,11 +87,18 @@ https://frontend.turing.io/projects/module-1/ideabox-group.html
 
 **Contributors**
 
-* JP Carey
-* Blake Donnelly
-* Brigette Doelp
+* [JP Carey](https://github.com/jaypeasee)
+* [Blake Donnelly](https://github.com/BlakeDonn)
+* [Brigette Doelp](https://github.com/BrigetteDoelp)
 
-# Additional Links #
+# Additional Links & Images #
 
-* DTR
-* GitHub Pages
+* [DTR](https://docs.google.com/document/d/1_f7KysMA7bNwvIehP6DSN65d5NR8qETxnz6aV8C2noA/edit#heading=h.chdm4qbpmig5)
+* [GitHub Pages](https://blakedonn.github.io/ideabox-boilerplate/)
+
+**Wireframe**
+
+
+
+![wireframe for mobile](https://i.imgur.com/qL8Cnly.png)
+![wireframe for desktop](https://i.imgur.com/hdhP2xo.png)
