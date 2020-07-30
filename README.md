@@ -37,7 +37,7 @@ We were given seven days to work on this project.
 
 ## Functionality ##
 
-![functionality of creating an idea card]()
+![functionality of creating an idea card](https://i.imgur.com/UCQ9sie.gif)
 
 **Main Page Functionality**
 
@@ -49,25 +49,25 @@ We were given seven days to work on this project.
 
 * To search through the ideas made for a specific word or phrase, use the search bar. When typing the phrase, the idea cards will be filtered accordingly.
 
-![starring an idea card]()
+![starring an idea card](https://i.imgur.com/0BPHX6r.gif)
 
-![deleting an idea card]()
+![deleting an idea card](https://i.imgur.com/41FqxrT.gif)
 
-![filtering starred idea cards]()
+![filtering starred idea cards](https://i.imgur.com/NlBNKj1.gif)
 
-![searching for idea cards]()
+![searching for idea cards](https://i.imgur.com/hodJ3f8.gif)
 
 **Mobile View**
 
-![mobile view]()
+![mobile view](https://i.imgur.com/dmyUr5j.png)
 
 **Tablet View**
 
-![tablet view]()
+![tablet view](https://i.imgur.com/6pCVbQl.png)
 
 **Desktop View**
 
-![desktop view]()
+![desktop view](https://i.imgur.com/SoPmqTd.png)
 
 **A Look Under The Hood**
 
