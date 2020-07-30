@@ -1,99 +1,121 @@
 # Ideabox Group Project
 
-Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application a new client that records and archives our ideas (good and bad alike).
+## Project Description ##
 
-Throughout the project, one of our focuses will be on providing a fluid and responsive client-side interface. To this end, we'll rely on JavaScript and to implement snappy filtering in the browser, and `localStorage` to persist our wonderful ideas between sessions.  Our goal is to also incorporate an agile workflow by incorporating two weekly sprints.
+This was a group project that was designed to store and organize ideas. A user can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to `localStorage`, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The user can also search through their saved ideas via the search input. The website is responsive, and adjusts layouts to suit desktop, tablet, and mobile views.
 
-*Note*: Expectations listed for Iteration 0-1 should be complete by your first check-in. No JavaScript should be written before that check-in, unless you get approval to move ahead with functionality from your Project Manager.
+## Learning Goals ##
 
-## Learning Goals
+* Continue to improve on building responsive client-side applications with good user feedback.
+* Understand how to implement client-side data persistence using `localStorage`.
+* Understand what it looks like to have a separate data model (using a class) and DOM model.
+* Utilize `data-*` attributes.
+* Incorporate & iterate over arrays in order to filter what is being displayed.
+* Craft code with clean style, using small functions that show trends toward DRYness and SRP.
+* Use and understand event delegation, propagation, and bubbling.
 
-* Continue to improve on building responsive client-side applications with good user feedback
-* Understand how to implement client-side data persistence using `localStorage`
-* Understand what it looks like to have a separate data model (using a class) and DOM model
-* Utilize `data-*` attributes
-* Incorporate & iterate over arrays in order to filter what is being displayed
-* Craft code with clean style, using small functions that show trends toward DRYness and SRP
+## Planning ##
 
-## Setup
+This group project was created using Atom as the text editor, and our project management was done through our private channel in slack. We referenced MDN documentation, lesson plans, CSS tricks, and our class notes for information. We contacted peers and mentors for support when we became stuck. Our remote repository is stored on GitHub.
 
-- Complete a DTR
-- Create a slack channel for all team members and your Project Manager.
-- Fork [the boilerplate
-  repository](https://github.com/turingschool-examples/ideabox-boilerplate). Add all team members and your Project Manager as collaborators.
-- Deploy your application to GitHub Pages.
-- In the team channel, drop the repo link and GitHub pages link.
+We were given seven days to work on this project.
 
-## Progression
+**Challenges**
 
-### Iteration 0 - Desktop Layout
+* Following the git workflow with multiple branches and group members. This was especially challenging at times when multiple branches were open and actively being worked on at one time.
+* Due to a global pandemic, the project needed to be done entirely remotely. All three members of the teams reside and did work across different time zones.
+* Creating a smooth transition between mobile, tablet, and desktop view.
 
-Plan then write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea "cards" will not always be there on page load, but for now, they should.
+**Wins**
 
-Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
+* Working on JavaScript, CSS, and HTML in a collaborative environment while working under deadlines.
+* Learning how to use and manage `localStorage`.
+* Becoming used to using media queries in CSS.
+* Properly implementing event delegation.
+* We are proud of the code that was written, and proud of the fact that the website functions as expected up through iteration 4.
+* Full understanding of event delegation, propagation, and bubbling! We were intimidated by the concept after the lesson on it, so implementing it with full understanding felt like a huge win.
 
-![Desktop Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/colors.jpg)
-![Colors](https://frontend.turing.io/projects/module-1/assets/ideabox-group/icons.jpg)
+## Functionality ##
 
-You will need the `svg` files for the star, delete, and menu icons. [Here's the link to download the `svg` icons.](https://drive.google.com/drive/folders/18xpWplI0tpXIK1omBZeq04LEx2OMzzMK?usp=sharing)
+![functionality of creating an idea card](https://i.imgur.com/UCQ9sie.gif)
 
-### Iteration 1 - Mobile Layout
+**Main Page Functionality**
 
-Now that your Desktop Layout is in place, it's time to write some media queries so this is a responsive site.
+* When both the title and body input fields are filled out, the `Save Idea` button is activated. Upon clicking the button, an idea card is generated using the values of the input field filled out by the user.
 
-Full mobile layout:
+* When the `star` is clicked on an idea card, the card is saved as a favourite. When the 'x' is clicked on an idea card, the card is deleted from the page.
 
-![Mobile Layout](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile.jpg)
+* When the `Show Starred Ideas` button is clicked, only the idea cards that have been favourited will show on the screen. The button will then change to `Show All Ideas`, and upon click, all ideas will show on the screen.
 
-Full mobile layout with open navigation:
+* To search through the ideas made for a specific word or phrase, use the search bar. When typing the phrase, the idea cards will be filtered accordingly.
 
-![Mobile Layout with Dropdown](https://frontend.turing.io/projects/module-1/assets/ideabox-group/mobile-dropdown.jpg)
+**Starring an Idea**
 
-### Iteration 2 and beyond
+![starring an idea card](https://i.imgur.com/0BPHX6r.gif)
 
-After you have completed Iterations 0-1, your Project Manager will provide you with the next iteration.
 
-## Rubric
+**Deleting an Idea**
 
-### Functional Expectations
+![deleting an idea card](https://i.imgur.com/41FqxrT.gif)
 
-* **4:** Application meets all of the expectations from Iteration 4 and most functionality from Iteration 5.
-* **3:** Application meets all of the expectations from Iteration 4.
-* **2:** Application meets all of the expectations of Iteration 3.
-* **1:** Application meets all of the expectations of Iteration 2.
 
-### Comp Recreation
+**Filtering Starred Ideas**
 
-* **4:** Additional elements that have been added match the visuals established in the comps. Every little detail was built out thoughtfully - from hover states to placeholders, etc.
-* **3:** Application implements all major comp details accurately and correctly on desktop and mobile (colors, fonts, icons, spacing, alignment, etc.) with **smooth transitions between screen sizes**. Additional elements added generally match the visuals established in the comps, but may be slightly awkward.
-* **2:** Application implements most major comp details accurately and correctly on **desktop and mobile** (colors, fonts, icons, spacing, alignment, etc.). Transitions between screen sizes may not be smooth.
-* **1:** Application implements all major comp details on desktop only (colors, fonts, icons, spacing, alignment, etc.), OR masonry layout is not implemented.
+![filtering starred idea cards](https://i.imgur.com/NlBNKj1.gif)
 
-### Git Workflow & Documentation
 
-* **4:** A PR template was used. A code review was requested and completed by a mentor, and all team members can speak to how the feedback in code review was implemented (and point to the commit(s) that implemented the feedback).
-* **3:** Every team member (on a team of 3) authors between 25%-40% of the commits. Most commits are formatted correctly. Every team member contributes to at least 2 meaningful PR conversations. The README is formatted well and contains:
-  - Overview of project and goals
-  - Overview of technologies used, challenges, and wins, any other reflections
-  - Screenshots of comp and your app
-  - Credit all teammates
-* **2:** Every team member (on a team of 3) authors between 20%-45% of the commits. More than a few commits are formatted incorrectly. The README is formatted well but may be lacking in detail.
-* **1:** Commit and PR history does not tell a story of the application OR a README has not been created/has minimal information.
+**Searching for an Idea**
 
-### JavaScript - Style and Implementation
+![searching for idea cards](https://i.imgur.com/hodJ3f8.gif)
 
-* **4:**
-  * All loops are refactored into the proper array prototype iteration methods
-  * Uses logical operators instead of if/else statements where applicable
-  * When 'Filtering and Searching by Text' and 'Viewing Urgent ToDo Cards', to-dos that do not need to be shown on the DOM should be completely removed from the DOM, instead of only being hidden from view
-* **3:**
-  * Application uses the Data Model exclusively to track changes to the ideas,
-    and display of ideas happens after the Data Model has been updated
-  * DRY and SRP practices are demonstrated in codebase and students can speak to implementation decisions
-  * All functions are less than 10 lines
-  * There are no nested if/else statements
-  * There are no global variables aside from query selectors and an array for your to-dos
-  * Uses event delegation correctly on dynamic elements for deleting, checking tasks off, and marking a to-do urgent
-* **2:** Application correctly implements data model for the `Idea` class including all required methods
-* **1:** Crafts JS according to the [Turing JS Style Guide](https://github.com/turingschool-examples/javascript/tree/master/es5)
+
+**Mobile View**
+
+![mobile view](https://i.imgur.com/dmyUr5j.png)
+
+
+**Tablet View**
+
+![tablet view](https://i.imgur.com/6pCVbQl.png)
+
+**Desktop View**
+
+
+![desktop view](https://i.imgur.com/SoPmqTd.png)
+
+**A Look Under The Hood**
+
+This project was assigned with the idea that we will gain experience using the data model, as opposed to direct to `DOM` manipulation. A large focus of the project was also using local storage correctly and effectively.
+
+We utilized the one global variable `var savedIdeas = [];` to store the ideas that the user creates and saves. Each time an idea is created, it is saved to `localStorage` using the method on the `Idea` class. Utilizing methods on the class constructor, we drew a firm line between the data model and the DOM. For example, in the `toggleStars()` function in `main.js`, we call a method that lives on the `Idea` class constructor. That method changes the star from white to red, and vice versa. When the function is called, we make sure to update the boolean value of `this.star` on the correct object instantiation of the `Idea class` in the `savedIdeas = [];` array. By updating the object in the array, we update the data model, which then in turn updates the `DOM`.
+
+### Programming Languages Used ###
+
+* JavaScript
+* HTML
+* CSS
+
+### Built With ###
+
+* Vanilla JavaScript
+* HTML & CSS (boilerplate for both provided in the repo for the comp)
+
+### Comp Given ###
+
+https://frontend.turing.io/projects/module-1/ideabox-group.html
+
+### Contributors ###
+
+* [JP Carey](https://github.com/jaypeasee)
+* [Blake Donnelly](https://github.com/BlakeDonn)
+* [Brigette Doelp](https://github.com/BrigetteDoelp)
+
+### Additional Links & Images ###
+
+* [DTR](https://docs.google.com/document/d/1_f7KysMA7bNwvIehP6DSN65d5NR8qETxnz6aV8C2noA/edit#heading=h.chdm4qbpmig5)
+* [GitHub Pages](https://blakedonn.github.io/ideabox-boilerplate/)
+
+**Wireframe**
+
+![wireframe for mobile](https://i.imgur.com/qL8Cnly.png)
+![wireframe for desktop](https://i.imgur.com/hdhP2xo.png)
