@@ -1,6 +1,6 @@
 # Ideabox Group Project
 
-### Project Description ###
+## Project Description ##
 
 This was a group project that was designed to store and organize ideas. A user can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to `localStorage`, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suit desktop, tablet, and mobile views.
 
@@ -34,7 +34,7 @@ We were given seven days to work on this project.
 * Properly implementing event delegation.
 * We are proud of the code that was written, and proud of the fact that the website functions as expected up through iteration 4.
 
-### Functionality ###
+## Functionality ##
 
 ![functionality of creating an idea card]()
 
@@ -70,28 +70,28 @@ This project was assigned with the idea that we will gain experience using the d
 
 We utilized the one global variable `var savedIdeas = [];` to store the ideas that the user creates and saves. Each time an idea is created, it is saved to `localStorage` using the method on the `Idea` class. Utilizing methods on the class constructor, we drew a firm line between the data model and the DOM. For example, in the `toggleStars()` function in `main.js`, we call a method that lives on the `Idea` class constructor. That method changes the star from white to red, and vice versa. When the function is called, we make sure to update the boolean value of `this.star` on the correct object instantiation of the `Idea class` in the `savedIdeas = [];` array. By updating the object in the array, we update the data model, which then in turn updates the `DOM`.
 
-# Programming Languages Used #
+### Programming Languages Used ###
 
 * JavaScript
 * HTML
 * CSS
 
-**Built With**
+### Built With ###
 
 * Vanilla JavaScript
 * HTML & CSS (boilerplate for both provided in the repo for the comp)
 
-**Comp Given**
+### Comp Given ###
 
 https://frontend.turing.io/projects/module-1/ideabox-group.html
 
-**Contributors**
+### Contributors ###
 
 * [JP Carey](https://github.com/jaypeasee)
 * [Blake Donnelly](https://github.com/BlakeDonn)
 * [Brigette Doelp](https://github.com/BrigetteDoelp)
 
-# Additional Links & Images #
+### Additional Links & Images ###
 
 * [DTR](https://docs.google.com/document/d/1_f7KysMA7bNwvIehP6DSN65d5NR8qETxnz6aV8C2noA/edit#heading=h.chdm4qbpmig5)
 * [GitHub Pages](https://blakedonn.github.io/ideabox-boilerplate/)
