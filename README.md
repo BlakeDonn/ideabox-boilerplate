@@ -2,7 +2,7 @@
 
 ### Project Description ###
 
-This was a group project that was designed to store and organize ideas. A use can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to local storage, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suit both desktop, tablet, and mobile views.
+This was a group project that was designed to store and organize ideas. A use can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to local storage, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suitx desktop, tablet, and mobile views.
 
 ## Learning Goals ##
 
@@ -16,9 +16,9 @@ This was a group project that was designed to store and organize ideas. A use ca
 
 ## Planning ##
 
-This group project was created using Atom as the text editor, and our project management was done through our private channel in slack. We references MDN documentation, lesson plans, CSS tricks, and notes for information. We contacted peers and mentors for support when we became stuck. Our remote repository is stored on GitHub.
+This group project was created using Atom as the text editor, and our project management was done through our private channel in slack. We referenced MDN documentation, lesson plans, CSS tricks, and our class notes for information. We contacted peers and mentors for support when we became stuck. Our remote repository is stored on GitHub.
 
-We were given seven days for this project.
+We were given seven days to work on this project.
 
 **Challenges**
 
@@ -64,6 +64,12 @@ We were given seven days for this project.
 
 ![mobile view]()
 
+**A Look Under The Hood**
+
+This project was assigned with the idea that we will gain experience using the data model, as opposed to direct to DOM manipulation. A large focus of the project was also using local storage correctly and effectively.
+
+We utilized the one global variable ```var savedIdeas = [];``` to store the ideas that the user creates and saves. Each time an idea is created, it is saved to ```localStorage``` using the method on the ```Idea``` class. Utilizing methods on the class constructor, we drew a firm line between the data model and the DOM. For example, in the ```toggleStars()``` function in ```main.js```, we call a method that lives on the ```Idea``` class constructor. That method changes the star from white to red, and vice versa. When the function is called, we make sure to update the boolean value of ```this.star``` on the correct object instantiation of the ```Idea class``` in the ```savedIdeas = [];``` array. By updating the object in the array, we update the data model, which then in turn updates the DOM.
+
 # Programming Languages Used #
 
 * JavaScript
@@ -89,4 +95,3 @@ https://frontend.turing.io/projects/module-1/ideabox-group.html
 
 * DTR
 * GitHub Pages
-.
