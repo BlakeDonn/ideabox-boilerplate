@@ -8,7 +8,8 @@ var showAllButton = document.querySelector(".show-all");
 var searchIdeas = document.querySelector(".search-idea-input");
 var modal = document.querySelector(".modal");
 var nav = document.querySelector(".menu");
-var formHeaders = document.querySelector(".h3-body");
+var bodyHeader = document.querySelector(".h3-body");
+var titleHeader = document.querySelector(".h3-title");
 var modalShowStarred = document.querySelector(".modal-starred");
 var modalShowAll = document.querySelector(".modal-all");
 
@@ -169,7 +170,8 @@ function showModal(event){
   console.log(event.target.classList)
   modal.classList.toggle("hidden");
   nav.classList.toggle("hidden");
-  formHeaders.classList.toggle("hide-input-text");
+  titleHeader.classList.toggle("hide-input-text");
+  bodyHeader.classList.toggle("hide-input-text");
 };
 
 
