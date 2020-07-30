@@ -57,13 +57,17 @@ We were given seven days to work on this project.
 
 ![searching for idea cards]()
 
+**Mobile View**
+
+![mobile view]()
+
 **Tablet View**
 
 ![tablet view]()
 
-**Mobile View**
+**Desktop View**
 
-![mobile view]()
+![desktop view]()
 
 **A Look Under The Hood**
 
