@@ -6,6 +6,11 @@ var ideaCardArea = document.querySelector(".idea-cards");
 var showStarredButton = document.querySelector(".show-starred");
 var showAllButton = document.querySelector(".show-all");
 var searchIdeas = document.querySelector(".search-idea-input");
+var modal = document.querySelector(".modal");
+var nav = document.querySelector(".menu");
+var formHeaders = document.querySelector(".h3-body");
+var modalShowStarred = document.querySelector(".modal-starred");
+var modalShowAll = document.querySelector(".modal-all");
 
 
 var savedIdeas = [];
@@ -30,11 +35,15 @@ window.addEventListener("click", function(event) {
   if (event.target.className === "box-star") {
     toggleStars(event);
   }
-  if (event.target.className === "show-starred") {
+  if (event.target.className.includes("show-starred")) {
     toggleSaved(event);
   }
-  if (event.target.className === "show-all") {
+  if (event.target.className.includes("show-all")) {
     toggleAll(event);
+  }
+
+  if (event.target.className.includes("hamburger-button")) {
+    showModal(event);
   }
 
 });
@@ -138,8 +147,8 @@ function toggleAll(){
 
 
 function toggleHidden(){
-  showStarredButton.classList.toggle("hidden")
-  showAllButton.classList.toggle("hidden")
+  console.log(event.target.classList);
+  !event.target.classList.contains("hidden") ? (event.target.classList.toggle("hidden"), event.target.nextElementSibling.classList.toggle("hidden")): null;
 }
 
 function clearFields() {
@@ -153,4 +162,11 @@ function enableButton(){
 
 function disableButton(){
   saveIdeaButton.classList.remove("save-idea-active");
+};
+
+function showModal(event){
+  console.log(event.target.classList)
+  modal.classList.toggle("hidden")
+  nav.classList.toggle("hidden")
+  formHeaders.classList.toggle("hide-input-text")
 };
