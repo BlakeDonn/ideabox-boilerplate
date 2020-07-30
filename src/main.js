@@ -13,7 +13,6 @@ var titleHeader = document.querySelector(".h3-title");
 var modalShowStarred = document.querySelector(".modal-starred");
 var modalShowAll = document.querySelector(".modal-all");
 
-
 var savedIdeas = [];
 
 window.addEventListener("load", parseSavedIdeas);
@@ -21,8 +20,9 @@ window.addEventListener("keyup", function(event) {
   if (event.target.className === "title-input" || event.target.className === "body-input") {
      keyHandler();
   }
+
   if (event.target.className === "search-idea-input"){
-    checkValues()
+    checkValues();
   }
 });
 
@@ -30,15 +30,19 @@ window.addEventListener("click", function(event) {
   if (titleInput.value !== "" && bodyInput.value !== "" && event.target === saveIdeaButton) {
     createIdeaCard(event);
   }
+
   if (event.target.className === "box-x") {
     removeCard(event);
   }
+
   if (event.target.className === "box-star") {
     toggleStars(event);
   }
+
   if (event.target.className.includes("show-starred")) {
     toggleSaved(event);
   }
+
   if (event.target.className.includes("show-all")) {
     toggleAll(event);
   }
@@ -58,27 +62,28 @@ function parseSavedIdeas() {
       displayIdeas(savedIdeas[i]);
     }
   }
-}
+};
 
-function keyHandler(){
+function keyHandler() {
   titleInput.value !== "" && bodyInput.value !== "" ? enableButton() : disableButton();
 };
 
-function checkValues(){
-  for (var i = 0; i < savedIdeas.length; i++){
-    if (!savedIdeas[i].title.includes(searchIdeas.value) || !savedIdeas[i].body.includes(searchIdeas.value)){
+function checkValues() {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if (!savedIdeas[i].title.includes(searchIdeas.value) || !savedIdeas[i].body.includes(searchIdeas.value)) {
       var notDisplayed = document.getElementById(savedIdeas[i].id);
       notDisplayed.classList.add("hidden");
     }
-    if (savedIdeas[i].title.includes(searchIdeas.value) || savedIdeas[i].body.includes(searchIdeas.value)){
+
+    if (savedIdeas[i].title.includes(searchIdeas.value) || savedIdeas[i].body.includes(searchIdeas.value)) {
       var notStarredCard = document.getElementById(savedIdeas[i].id);
       notStarredCard.classList.remove("hidden");
     }
   }
-}
+};
 
 function createIdeaCard(event) {
-  var newIdea = new Idea(titleInput.value, bodyInput.value);            // refactor
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
   savedIdeas.unshift(newIdea);
   clearFields();
   displayIdeas(savedIdeas[0]);
@@ -87,11 +92,11 @@ function createIdeaCard(event) {
 };
 
 function removeCard(event) {
-  var selectedIdea = event.target.closest(".idea-box"); //buggy
+  var selectedIdea = event.target.closest(".idea-box");
   var selectedID = event.target.id;
   for (var i = 0; i < savedIdeas.length; i++) {
     if (savedIdeas[i].id == selectedID) {
-      savedIdeas[i].deleteFromStorage()
+      savedIdeas[i].deleteFromStorage();
       savedIdeas.splice(i, 1);
       selectedIdea.remove();
     }
@@ -134,45 +139,40 @@ function toggleSaved() {
       notStarredCard.classList.add("hidden");
     }
   }
-  toggleHidden()
-}
+  toggleHidden();
+};
 
-function toggleAll(){
-  for (var i = 0; i < savedIdeas.length; i++){
+function toggleAll() {
+  for (var i = 0; i < savedIdeas.length; i++) {
     var notStarredCard = document.getElementById(savedIdeas[i].id);
     notStarredCard.classList.remove("hidden");
   }
-  toggleHidden()
-}
+  toggleHidden();
+};
 
-
-function toggleHidden(){
+function toggleHidden() {
   showStarredButton.classList.toggle("hidden");
   showAllButton.classList.toggle("hidden");
   modalShowStarred.classList.toggle("hidden");
   modalShowAll.classList.toggle("hidden");
-}
+};
 
 function clearFields() {
-  titleInput.value = ""; //check into a built in method that will do this same thing Only Nifty-er
+  titleInput.value = "";
   bodyInput.value = "";
 };
 
-function enableButton(){
+function enableButton() {
   saveIdeaButton.classList.add("save-idea-active");
 };
 
-function disableButton(){
+function disableButton() {
   saveIdeaButton.classList.remove("save-idea-active");
 };
 
-function showModal(event){
-  console.log(event.target.classList)
+function showModal(event) {
   modal.classList.toggle("hidden");
   nav.classList.toggle("hidden");
   titleHeader.classList.toggle("hide-input-text");
   bodyHeader.classList.toggle("hide-input-text");
 };
-
-
-// !event.target.parentElement.firstElementChild.contains("hidden") && event.target.classList.contains("show-starred") ? (event.target.classList.toggle("hidden"), event.target.nextElementSibling.classList.toggle("hidden")): null;
