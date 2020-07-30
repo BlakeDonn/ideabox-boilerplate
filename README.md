@@ -2,7 +2,7 @@
 
 ## Project Description ##
 
-This was a group project that was designed to store and organize ideas. A user can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to `localStorage`, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The website is responsive, and adjusts layouts to suit desktop, tablet, and mobile views.
+This was a group project that was designed to store and organize ideas. A user can input a title and body for the idea. The user can also delete ideas, favourite them, and filter the ideas by those favourites. The user's ideas are saved to `localStorage`, so they persist on page refresh, assuring that the ideas recorded on the site are saved for the user. The user can also search through their saved ideas via the search input. The website is responsive, and adjusts layouts to suit desktop, tablet, and mobile views.
 
 ## Learning Goals ##
 
@@ -12,7 +12,7 @@ This was a group project that was designed to store and organize ideas. A user c
 * Utilize `data-*` attributes.
 * Incorporate & iterate over arrays in order to filter what is being displayed.
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP.
-* Use and understand event delegation and bubbling.
+* Use and understand event delegation, propagation, and bubbling.
 
 ## Planning ##
 
@@ -33,6 +33,7 @@ We were given seven days to work on this project.
 * Becoming used to using media queries in CSS.
 * Properly implementing event delegation.
 * We are proud of the code that was written, and proud of the fact that the website functions as expected up through iteration 4.
+* Full understanding of event delegation, propagation, and bubbling! We were intimidated by the concept after the lesson on it, so implementing it with full understanding felt like a huge win.
 
 ## Functionality ##
 
