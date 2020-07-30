@@ -45,7 +45,6 @@ window.addEventListener("click", function(event) {
   if (event.target.className.includes("hamburger-button")) {
     showModal(event);
   }
-
 });
 
 function parseSavedIdeas() {
@@ -147,8 +146,10 @@ function toggleAll(){
 
 
 function toggleHidden(){
-  console.log(event.target.classList);
-  !event.target.classList.contains("hidden") ? (event.target.classList.toggle("hidden"), event.target.nextElementSibling.classList.toggle("hidden")): null;
+  showStarredButton.classList.toggle("hidden");
+  showAllButton.classList.toggle("hidden");
+  modalShowStarred.classList.toggle("hidden");
+  modalShowAll.classList.toggle("hidden");
 }
 
 function clearFields() {
@@ -166,7 +167,10 @@ function disableButton(){
 
 function showModal(event){
   console.log(event.target.classList)
-  modal.classList.toggle("hidden")
-  nav.classList.toggle("hidden")
-  formHeaders.classList.toggle("hide-input-text")
+  modal.classList.toggle("hidden");
+  nav.classList.toggle("hidden");
+  formHeaders.classList.toggle("hide-input-text");
 };
+
+
+// !event.target.parentElement.firstElementChild.contains("hidden") && event.target.classList.contains("show-starred") ? (event.target.classList.toggle("hidden"), event.target.nextElementSibling.classList.toggle("hidden")): null;
